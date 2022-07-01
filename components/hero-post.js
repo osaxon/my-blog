@@ -20,17 +20,17 @@ export default function HeroPost({
 				<div>
 					<h3 className="mb-4 text-4xl lg:text-6xl leading-tight dark:text-slate-50 text-slate-900">
 						<Link href={`/posts/${slug}`}>
-							<a className="hover:underline dark:text-slate-50 text-slate-900">
+							<a className="hover:underline font-serif italic dark:text-slate-50 text-slate-900">
 								{title}
 							</a>
 						</Link>
 					</h3>
-					<div className="mb-4 md:mb-0 text-lg dark:text-slate-50 text-slate-900">
+					<div className="mb-4 md:mb-0 font-mono text-lg dark:text-slate-50 text-slate-900">
 						<DateComponent dateString={date} />
 					</div>
 				</div>
 				<div>
-					<p className="text-lg leading-relaxed mb-4 dark:text-slate-50 text-slate-900">
+					<p className="text-lg font-serif leading-relaxed mb-4 dark:text-slate-50 text-slate-900">
 						{excerpt}
 					</p>
 					{author && (

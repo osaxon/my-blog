@@ -3,3 +3,8 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+@font-face {
+	font-family: "MyFont";
+	src: local(""), url("/fonts/Rubik-80sFade-Regular.ttf");
+}

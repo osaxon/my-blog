@@ -1,8 +1,7 @@
 import React from "react";
 import useDarkMode from "../hooks/useDarkMode";
 import { useLoaded } from "../hooks/useLoaded";
-import SvgBulb from "./svg-bulb";
-import SvgMoon from "./svg-moon";
+import Emoji from "a11y-react-emoji";
 
 const DarkModeToggle = () => {
 	const loaded = useLoaded();
@@ -12,17 +11,17 @@ const DarkModeToggle = () => {
 		<button className="rounded-lg h-12 w-12">
 			{loaded && colorTheme === "light" ? (
 				<button
-					className="text-slate-50 tracking-tighter"
+					className="text-slate-50 tracking-tighter text-3xl"
 					onClick={() => setTheme("light")}
 				>
-					LIGHT
+					<Emoji symbol="🌝" label="light" />
 				</button>
 			) : (
 				<button
-					className="text-slate-900 tracking-tighter"
+					className="text-slate-900 tracking-tighter text-3xl"
 					onClick={() => setTheme("dark")}
 				>
-					DARK
+					<Emoji symbol="🌚" label="dark" />
 				</button>
 			)}
 		</button>

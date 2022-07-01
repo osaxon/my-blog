@@ -7,11 +7,12 @@ export default function Avatar({ name, picture }) {
 				<ContentfulImage
 					src={picture.url}
 					layout="fill"
+					objectFit="cover"
 					className="rounded-full"
 					alt={name}
 				/>
 			</div>
-			<div className="text-xl font-bold text-slate-900 dark:text-slate-50">
+			<div className="text-xl font-serif font-bold text-slate-900 dark:text-slate-50">
 				{name}
 			</div>
 		</div>
