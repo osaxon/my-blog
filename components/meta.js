@@ -39,15 +39,31 @@ export default function Meta() {
 				name="description"
 				content={`A blog created by Oli Saxon using Next.JS and ${CMS_NAME}`}
 			/>
-			<meta property="og:image" content={HOME_OG_IMAGE_URL} />
+
+			<meta property="og:url" content="http://www.webjenga.com/" />
+			<meta property="og:type" content="website" />
 			<meta property="og:title" content="Web Jenga" />
-			<meta property="og:url" content="https://webjenga.com" />
+			<meta
+				property="og:description"
+				content="A blog created by Oli Saxon using Next.JS and Contentful"
+			/>
 			<meta
 				property="og:image"
 				content="https://images.ctfassets.net/kymlebscek55/1Xco8bY9RPxCEYHA8thDNN/b715c44569b0f26401460bd775cf516b/E6841_092_1.png?w=3840&q=75"
 			/>
-			<meta property="og:image:width" content="1200" />
-			<meta property="og:image:height" content="630" />
+
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta property="twitter:domain" content="webjenga.com" />
+			<meta property="twitter:url" content="http://www.webjenga.com/" />
+			<meta name="twitter:title" content="Web Jenga" />
+			<meta
+				name="twitter:description"
+				content="A blog created by Oli Saxon using Next.JS and Contentful"
+			/>
+			<meta
+				name="twitter:image"
+				content="https://images.ctfassets.net/kymlebscek55/1Xco8bY9RPxCEYHA8thDNN/b715c44569b0f26401460bd775cf516b/E6841_092_1.png?w=3840&q=75"
+			/>
 		</Head>
 	);
 }
