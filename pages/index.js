@@ -9,8 +9,16 @@ import { CMS_NAME } from "../lib/constants";
 import DarkModeToggle from "../components/dark-mode-toggle";
 
 export default function Index({ preview, allPosts }) {
-	const heroPost = allPosts[0];
-	const morePosts = allPosts.slice(1);
+	//const heroPost = allPosts[0];
+	//const morePosts = allPosts.slice(1);
+	const pinnedPost = allPosts.filter((post) => {
+		return post.pinned === true;
+	});
+	const heroPost = pinnedPost[0];
+	const morePosts = allPosts.filter((post) => {
+		return post.pinned === false;
+	});
+
 	return (
 		<>
 			<Layout preview={preview}>

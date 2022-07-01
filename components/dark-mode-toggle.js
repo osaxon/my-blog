@@ -8,23 +8,23 @@ const DarkModeToggle = () => {
 	const [colorTheme, setTheme] = useDarkMode();
 
 	return (
-		<button className="rounded-lg h-12 w-12">
+		<>
 			{loaded && colorTheme === "light" ? (
 				<button
-					className="text-slate-50 tracking-tighter text-3xl"
+					className=" text-slate-50 tracking-tighter text-3xl"
 					onClick={() => setTheme("light")}
 				>
 					<Emoji symbol="🌝" label="light" />
 				</button>
 			) : (
 				<button
-					className="text-slate-900 tracking-tighter text-3xl"
+					className="text-slate-900 flex tracking-tighter text-3xl"
 					onClick={() => setTheme("dark")}
 				>
 					<Emoji symbol="🌚" label="dark" />
 				</button>
 			)}
-		</button>
+		</>
 	);
 };
 

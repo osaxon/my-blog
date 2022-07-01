@@ -24,6 +24,9 @@ module.exports = {
 			leaf: theme("colors.leaf.500"),
 		}),
 		extend: {
+			scale: {
+				"-1": "-1",
+			},
 			colors: {
 				"accent-1": "#FAFAFA",
 				"accent-2": "#EAEAEA",
