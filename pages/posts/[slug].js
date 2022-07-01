@@ -63,6 +63,7 @@ export async function getStaticProps({ params, preview = false }) {
 			post: data?.post ?? null,
 			morePosts: data?.morePosts ?? null,
 		},
+		revalidate: 10,
 	};
 }
 
@@ -71,6 +72,5 @@ export async function getStaticPaths() {
 	return {
 		paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
 		fallback: true,
-		revalidate: 10,
 	};
 }
