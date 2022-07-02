@@ -63,7 +63,7 @@ export async function getStaticProps({ params, preview = false }) {
 			post: data?.post ?? null,
 			morePosts: data?.morePosts ?? null,
 		},
-		revalidate: 10,
+		revalidate: 60,
 	};
 }
 
@@ -71,6 +71,6 @@ export async function getStaticPaths() {
 	const allPosts = await getAllPostsWithSlug();
 	return {
 		paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
-		fallback: true,
+		fallback: "blocking",
 	};
 }
