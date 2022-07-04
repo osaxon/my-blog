@@ -7,9 +7,9 @@ export default async function handler(req, res) {
 	}
 
 	// check for secret token
-	if (req.query.secret !== "DairyMilk99") {
-		return res.status(401).json({ message: "Invalid token." });
-	}
+	// if (req.query.secret !== "DairyMilk99") {
+	// 	return res.status(401).json({ message: "Invalid token." });
+	// }
 
 	try {
 		// check body is not empty
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 		const slugToRevalidate = body.slugToRevalidate;
 		console.log(slugToRevalidate);
 		if (slugToRevalidate) {
-			await res.revalidate(`/posts/${slugToRevalidate}`);
+			await res.revalidate(`/posts/welcome`);
 			return res.json({ revalidated: true });
 		}
 	} catch (err) {

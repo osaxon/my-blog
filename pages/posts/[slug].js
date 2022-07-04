@@ -10,9 +10,17 @@ import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
-import { CMS_NAME } from "../../lib/constants";
+import useSWR from "swr";
+
+async function fetcherFunc(url) {
+	const res = await fetch(url);
+	return res.json();
+}
 
 export default function Post({ post, morePosts, preview }) {
+	const url = "/api/posts";
+	const { data, error } = useSWR(url, fetcherFunc);
+
 	const router = useRouter();
 
 	if (!router.isFallback && !post) {
