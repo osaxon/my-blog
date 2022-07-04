@@ -71,7 +71,7 @@ export async function getStaticProps({ params, preview = false }) {
 			post: data?.post ?? null,
 			morePosts: data?.morePosts ?? null,
 		},
-		revalidate: 5,
+		// revalidate: 5,
 	};
 }
 
