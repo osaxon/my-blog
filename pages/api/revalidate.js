@@ -14,6 +14,7 @@ export default async function handler(req, res) {
 	try {
 		// check body is not empty
 		const body = req.body;
+		console.log(body);
 		if (!body) {
 			return res.status(400).send("Bad request (no body");
 		}
@@ -22,7 +23,7 @@ export default async function handler(req, res) {
 		const slugToRevalidate = body.slugToRevalidate;
 		console.log(slugToRevalidate);
 		if (slugToRevalidate) {
-			await res.revalidate(`/posts/welcome`);
+			await res.revalidate(`/posts/${slugToRevalidate}`);
 			return res.json({ revalidated: true });
 		}
 	} catch (err) {
