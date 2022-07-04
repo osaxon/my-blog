@@ -7,24 +7,25 @@ export default async function handler(req, res) {
 	}
 
 	// check for secret token
-	// if (req.query.secret !== "DairyMilk99") {
-	// 	return res.status(401).json({ message: "Invalid token." });
-	// }
+	if (req.query.secret !== "DairyMilk99") {
+		return res.status(401).json({ message: "Invalid token." });
+	}
 
 	try {
 		// check body is not empty
 		const body = req.body;
-		console.log(body);
 		if (!body) {
 			return res.status(400).send("Bad request (no body");
 		}
 
 		// get slug to revalidate
 		const slugToRevalidate = body.slugToRevalidate;
-		console.log(slugToRevalidate);
 		if (slugToRevalidate) {
 			await res.revalidate(`/posts/${slugToRevalidate}`);
-			return res.json({ revalidated: true });
+			return res.json({
+				revalidated: true,
+				slugRevalidated: slugToRevalidate,
+			});
 		}
 	} catch (err) {
 		// If there was an error, Next.js will continue
