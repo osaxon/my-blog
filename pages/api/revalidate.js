@@ -21,6 +21,7 @@ export default async function handler(req, res) {
 		// get slug to revalidate
 		const slugToRevalidate = body.slugToRevalidate;
 		if (slugToRevalidate) {
+			await res.revalidate("/");
 			await res.revalidate(`/posts/${slugToRevalidate}`);
 			return res.json({
 				revalidated: true,
