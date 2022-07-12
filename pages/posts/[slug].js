@@ -18,6 +18,8 @@ export default function Post({ post, morePosts, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
+	console.log(post);
+
 	return (
 		<Layout preview={preview}>
 			<Container>
@@ -55,6 +57,7 @@ export default function Post({ post, morePosts, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
 	const data = await getPostAndMorePosts(params.slug, preview);
+	//const data = await getPostAndTopics(params.slug, preview);
 
 	return {
 		props: {
@@ -62,12 +65,13 @@ export async function getStaticProps({ params, preview = false }) {
 			post: data?.post ?? null,
 			morePosts: data?.morePosts ?? null,
 		},
-		revalidate: 10,
+		revalidate: 1,
 	};
 }
 
 export async function getStaticPaths() {
 	const allPosts = await getAllPostsWithSlug();
+
 	return {
 		paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
 		fallback: "blocking",

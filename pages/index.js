@@ -3,19 +3,13 @@ import MoreStories from "../components/more-stories";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPostsForHome } from "../lib/api";
+import { getAllPostsForHome, getAllTopicsForHome } from "../lib/api";
+import { useState } from "react";
 import Head from "next/head";
 
 export default function Index({ preview, allPosts }) {
 	const heroPost = allPosts[0];
 	const morePosts = allPosts.slice(1);
-	// const pinnedPost = allPosts.filter((post) => {
-	// 	return post.pinned === true;
-	// });
-	// const heroPost = pinnedPost[0];
-	// const morePosts = allPosts.filter((post) => {
-	// 	return post.pinned === false;
-	// });
 
 	return (
 		<>
@@ -25,6 +19,7 @@ export default function Index({ preview, allPosts }) {
 				</Head>
 
 				<Intro />
+
 				{heroPost && (
 					<HeroPost
 						title={heroPost.title}
@@ -43,8 +38,9 @@ export default function Index({ preview, allPosts }) {
 
 export async function getStaticProps({ preview = false }) {
 	const allPosts = (await getAllPostsForHome(preview)) ?? [];
+
 	return {
 		props: { preview, allPosts },
-		revalidate: 10,
+		revalidate: 1,
 	};
 }
