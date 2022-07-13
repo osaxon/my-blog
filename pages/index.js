@@ -1,16 +1,15 @@
-import Container from "../components/container";
 import MoreStories from "../components/more-stories";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPostsForHome, getAllTopicsForHome } from "../lib/api";
-import { useState } from "react";
+import { getAllPostsForHome, getAllTopics } from "../lib/api";
 import Head from "next/head";
-import TopicContainer from "../components/topic-container";
+import Nav from "../components/nav";
 
-export default function Index({ preview, allPosts }) {
+export default function Index({ preview, allPosts, allTopics }) {
 	const heroPost = allPosts[0];
 	const morePosts = allPosts.slice(1);
+	console.log(allTopics);
 
 	return (
 		<>
@@ -20,9 +19,7 @@ export default function Index({ preview, allPosts }) {
 				</Head>
 
 				<Intro />
-				<TopicContainer
-					topics={[{ name: "money", url: "/posts/topic/money" }]}
-				/>
+				<Nav topics={allTopics} />
 
 				{heroPost && (
 					<HeroPost
@@ -35,7 +32,7 @@ export default function Index({ preview, allPosts }) {
 					/>
 				)}
 				{morePosts.length > 0 && (
-					<MoreStories title="More Stories" posts={morePosts} />
+					<MoreStories title="More Posts" posts={morePosts} />
 				)}
 			</Layout>
 		</>
@@ -44,9 +41,10 @@ export default function Index({ preview, allPosts }) {
 
 export async function getStaticProps({ preview = false }) {
 	const allPosts = (await getAllPostsForHome(preview)) ?? [];
+	const allTopics = (await getAllTopics()) ?? [];
 
 	return {
-		props: { preview, allPosts },
+		props: { preview, allPosts, allTopics },
 		revalidate: 1,
 	};
 }
