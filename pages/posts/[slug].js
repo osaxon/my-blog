@@ -22,35 +22,33 @@ export default function Post({ post, morePosts, preview }) {
 
 	return (
 		<Layout preview={preview}>
-			<Container>
-				<Header />
-				{router.isFallback ? (
-					<PostTitle>Loading…</PostTitle>
-				) : (
-					<>
-						<article className="">
-							<Head>
-								<title>{post.title}</title>
-								<meta
-									property="og:image"
-									content={post.coverImage.url}
-								/>
-							</Head>
-							<PostHeader
-								title={post.title}
-								coverImage={post.coverImage}
-								date={post.date}
-								author={post.author}
+			<Header />
+			{router.isFallback ? (
+				<PostTitle>Loading…</PostTitle>
+			) : (
+				<>
+					<article className="">
+						<Head>
+							<title>{post.title}</title>
+							<meta
+								property="og:image"
+								content={post.coverImage.url}
 							/>
-							<PostBody content={post.content} />
-						</article>
-						<SectionSeparator />
-						{morePosts && morePosts.length > 0 && (
-							<MoreStories posts={morePosts} />
-						)}
-					</>
-				)}
-			</Container>
+						</Head>
+						<PostHeader
+							title={post.title}
+							coverImage={post.coverImage}
+							date={post.date}
+							author={post.author}
+						/>
+						<PostBody content={post.content} />
+					</article>
+					<SectionSeparator />
+					{morePosts && morePosts.length > 0 && (
+						<MoreStories posts={morePosts} />
+					)}
+				</>
+			)}
 		</Layout>
 	);
 }

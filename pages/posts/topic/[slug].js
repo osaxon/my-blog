@@ -18,6 +18,7 @@ export default function Topics({ preview, allPosts }) {
 	const router = useRouter();
 	const heroPost = allPosts[0];
 	const morePosts = allPosts.slice(1);
+	const topic = router.query.slug;
 
 	if (!router.isFallback && !allPosts) {
 		return <ErrorPage statusCode={404} />;
@@ -26,18 +27,16 @@ export default function Topics({ preview, allPosts }) {
 	return (
 		<>
 			<Layout preview={preview}>
-				<Container>
-					<Header />
-					{router.isFallback ? (
-						<PostTitle>Loading…</PostTitle>
-					) : (
-						<>
-							{allPosts && allPosts.length > 0 && (
-								<MoreStories posts={allPosts} />
-							)}
-						</>
-					)}
-				</Container>
+				<Header />
+				{router.isFallback ? (
+					<PostTitle>Loading…</PostTitle>
+				) : (
+					<>
+						{allPosts && allPosts.length > 0 && (
+							<MoreStories title={topic} posts={allPosts} />
+						)}
+					</>
+				)}
 			</Layout>
 		</>
 	);

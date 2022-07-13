@@ -51,7 +51,7 @@ module.exports = {
 			},
 			fontFamily: {
 				myfont: ["MyFont"],
-				sams: ["MyFont", "sans-serif"],
+				sans: ["MyFont", "sans-serif"],
 			},
 			boxShadow: {
 				small: "0 5px 10px rgba(0, 0, 0, 0.12)",

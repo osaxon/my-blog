@@ -6,5 +6,6 @@
 
 @font-face {
 	font-family: "MyFont";
-	src: local(""), url("/fonts/Rubik-80sFade-Regular.ttf");
+	src: url("https://fonts.googleapis.com/css2?family=Bitter&display=swap");
 }
+

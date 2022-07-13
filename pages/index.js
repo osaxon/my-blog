@@ -34,7 +34,9 @@ export default function Index({ preview, allPosts }) {
 						excerpt={heroPost.excerpt}
 					/>
 				)}
-				{morePosts.length > 0 && <MoreStories posts={morePosts} />}
+				{morePosts.length > 0 && (
+					<MoreStories title="More Stories" posts={morePosts} />
+				)}
 			</Layout>
 		</>
 	);
