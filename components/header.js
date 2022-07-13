@@ -1,12 +1,18 @@
 import Link from "next/link";
+import Container from "./container";
+import Intro from "./intro";
+import DarkModeToggle from "./dark-mode-toggle";
+import Nav from "./nav";
 
 export default function Header() {
 	return (
-		<h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 dark:text-slate-50 text-slate-900">
-			<Link href="/">
-				<a className="hover:underline">Blog</a>
-			</Link>
-			.
-		</h2>
+		<header className="bg-wavy-pattern">
+			<Container>
+				<div className="flex justify-between py-12">
+					<Intro />
+					<DarkModeToggle theme="light" />
+				</div>
+			</Container>
+		</header>
 	);
 }

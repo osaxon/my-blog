@@ -34,6 +34,10 @@ module.exports = {
 				success: "#0070f3",
 				cyan: "#79FFE1",
 			},
+			backgroundImage: {
+				"wavy-pattern":
+					"url(https://images.ctfassets.net/kymlebscek55/4KYSD39iC78Apy8HAcfqlZ/b27f20ff908d94a4d4b8e6d9045ebbfb/Frame_1BG.png)",
+			},
 			spacing: {
 				28: "7rem",
 			},

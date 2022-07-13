@@ -12,7 +12,7 @@ export default function Nav({ topics }) {
 					</Link>
 					<span>...</span>
 				</h2>
-				<div className="flex flex-wrap gap-x-4  ">
+				<div className="flex flex-wrap gap-x-4 ">
 					{topics &&
 						topics.map((topic) => (
 							<Topic

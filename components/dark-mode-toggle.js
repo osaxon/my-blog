@@ -3,9 +3,10 @@ import useDarkMode from "../hooks/useDarkMode";
 import { useLoaded } from "../hooks/useLoaded";
 import Emoji from "a11y-react-emoji";
 
-const DarkModeToggle = () => {
+const DarkModeToggle = ({ theme }) => {
+	console.log(theme);
 	const loaded = useLoaded();
-	const [colorTheme, setTheme] = useDarkMode();
+	const [colorTheme, setTheme] = useDarkMode(theme);
 
 	return (
 		<>
@@ -18,7 +19,7 @@ const DarkModeToggle = () => {
 				</button>
 			) : (
 				<button
-					className="text-slate-900 flex tracking-tighter text-3xl"
+					className="text-slate-900 tracking-tighter text-3xl"
 					onClick={() => setTheme("dark")}
 				>
 					<Emoji symbol="🌚" label="dark" />

@@ -17,8 +17,6 @@ export default function Index({ preview, allPosts, allTopics }) {
 				<Head>
 					<title>Web Jenga</title>
 				</Head>
-
-				<Intro />
 				<Nav topics={allTopics} />
 
 				{heroPost && (
