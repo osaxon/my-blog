@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import { getAllPostsForHome, getAllTopicsForHome } from "../lib/api";
 import { useState } from "react";
 import Head from "next/head";
+import TopicContainer from "../components/topic-container";
 
 export default function Index({ preview, allPosts }) {
 	const heroPost = allPosts[0];
@@ -19,6 +20,9 @@ export default function Index({ preview, allPosts }) {
 				</Head>
 
 				<Intro />
+				<TopicContainer
+					topics={[{ name: "money", url: "/posts/topic/money" }]}
+				/>
 
 				{heroPost && (
 					<HeroPost

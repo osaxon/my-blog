@@ -1,8 +1,12 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
+import ErrorPage from "next/error";
 import Layout from "../../../components/layout";
 import HeroPost from "../../../components/hero-post";
 import MoreStories from "../../../components/more-stories";
+import Intro from "../../../components/intro";
+import Header from "../../../components/header";
+import Container from "../../../components/container";
 
 import {
 	getAllPostsWithSlug,
@@ -11,27 +15,29 @@ import {
 } from "../../../lib/api";
 
 export default function Topics({ preview, allPosts }) {
-	console.log(allPosts);
+	const router = useRouter();
 	const heroPost = allPosts[0];
 	const morePosts = allPosts.slice(1);
+
+	if (!router.isFallback && !allPosts) {
+		return <ErrorPage statusCode={404} />;
+	}
 
 	return (
 		<>
 			<Layout preview={preview}>
-				<Head>
-					<title>Web Jenga</title>
-				</Head>
-				{heroPost && (
-					<HeroPost
-						title={heroPost.title}
-						coverImage={heroPost.coverImage}
-						date={heroPost.date}
-						author={heroPost.author}
-						slug={heroPost.slug}
-						excerpt={heroPost.excerpt}
-					/>
-				)}
-				{morePosts.length > 0 && <MoreStories posts={morePosts} />}
+				<Container>
+					<Header />
+					{router.isFallback ? (
+						<PostTitle>Loading…</PostTitle>
+					) : (
+						<>
+							{allPosts && allPosts.length > 0 && (
+								<MoreStories posts={allPosts} />
+							)}
+						</>
+					)}
+				</Container>
 			</Layout>
 		</>
 	);
