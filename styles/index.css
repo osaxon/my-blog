@@ -4,4 +4,8 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
+@font-face {
+	font-family: "MyFont";
+	src: url("https://fonts.googleapis.com/css2?family=Bitter&display=swap");
+}
 
