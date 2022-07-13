@@ -37,7 +37,7 @@ export default function Meta() {
 			<link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 			<meta
 				name="description"
-				content={`A blog created by Oli Saxon using Next.JS and ${CMS_NAME}`}
+				content="A blog travel created by Oli Saxon and Giovanna De Sortis"
 			/>
 
 			<meta property="og:url" content="http://www.webjenga.com/" />
@@ -45,12 +45,9 @@ export default function Meta() {
 			<meta property="og:title" content="Web Jenga" />
 			<meta
 				property="og:description"
-				content="A blog created by Oli Saxon using Next.JS and Contentful"
+				content="A blog travel created by Oli Saxon and Giovanna De Sortis"
 			/>
-			<meta
-				property="og:image"
-				content="https://images.ctfassets.net/kymlebscek55/1Xco8bY9RPxCEYHA8thDNN/b715c44569b0f26401460bd775cf516b/E6841_092_1.png?w=3840&q=75"
-			/>
+			<meta property="og:image" content={HOME_OG_IMAGE_URL} />
 
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta property="twitter:domain" content="webjenga.com" />
@@ -58,12 +55,9 @@ export default function Meta() {
 			<meta name="twitter:title" content="Web Jenga" />
 			<meta
 				name="twitter:description"
-				content="A blog created by Oli Saxon using Next.JS and Contentful"
+				content="A blog travel created by Oli Saxon and Giovanna De Sortis"
 			/>
-			<meta
-				name="twitter:image"
-				content="https://images.ctfassets.net/kymlebscek55/1Xco8bY9RPxCEYHA8thDNN/b715c44569b0f26401460bd775cf516b/E6841_092_1.png?w=3840&q=75"
-			/>
+			<meta name="twitter:image" content={HOME_OG_IMAGE_URL} />
 		</Head>
 	);
 }
