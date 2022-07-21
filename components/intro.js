@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Intro() {
 	return (
-		<h1 className="text-6xl font-bold md:text-8xl tracking-tighter leading-tight md:pr-8 dark:text-slate-50 text-slate-900">
-			<Link href="/">OG Travels</Link>
+		<h1 className="text-7xl font-custom md:text-8xl text-[#0C392E] leading-tight dark:text-slate-50 ">
+			<Link href="/">OG TRAVELS</Link>
 		</h1>
 	);
 }

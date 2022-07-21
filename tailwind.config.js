@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx}",
@@ -54,8 +56,7 @@ module.exports = {
 				"8xl": "6.25rem",
 			},
 			fontFamily: {
-				myfont: ["MyFont"],
-				sans: ["MyFont", "sans-serif"],
+				custom: ["Patua One", ...defaultTheme.fontFamily.sans],
 			},
 			boxShadow: {
 				small: "0 5px 10px rgba(0, 0, 0, 0.12)",

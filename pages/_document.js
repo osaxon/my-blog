@@ -6,10 +6,17 @@ export default class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<link
-						rel="preload"
-						href="/fonts/Rubik-80sFade-Regular.ttf"
-						as="font"
-						crossOrigin=""
+						rel="preconnect"
+						href="https://fonts.googleapis.com"
+					/>
+					<link
+						rel="preconnect"
+						href="https://fonts.gstatic.com"
+						crossorigin
+					/>
+					<link
+						href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap&display=swap"
+						rel="stylesheet"
 					/>
 				</Head>
 				<body className="dark:bg-slate-900 bg-slate-50">

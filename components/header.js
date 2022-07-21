@@ -6,12 +6,9 @@ import Nav from "./nav";
 
 export default function Header() {
 	return (
-		<header className="bg-wavy-pattern">
+		<header className="">
 			<Container>
-				<div className="flex justify-between py-12">
-					<Intro />
-					<DarkModeToggle theme="light" />
-				</div>
+				<Intro />
 			</Container>
 		</header>
 	);

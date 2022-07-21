@@ -5,6 +5,8 @@ import Layout from "../components/layout";
 import { getAllPostsForHome, getAllTopics } from "../lib/api";
 import Head from "next/head";
 import Nav from "../components/nav";
+import Container from "../components/container";
+import HeroImage from "../components/hero-image";
 
 export default function Index({ preview, allPosts, allTopics }) {
 	const heroPost = allPosts[0];
@@ -19,19 +21,21 @@ export default function Index({ preview, allPosts, allTopics }) {
 				</Head>
 				<Nav topics={allTopics} />
 
-				{heroPost && (
-					<HeroPost
-						title={heroPost.title}
-						coverImage={heroPost.coverImage}
-						date={heroPost.date}
-						author={heroPost.author}
-						slug={heroPost.slug}
-						excerpt={heroPost.excerpt}
-					/>
-				)}
-				{morePosts.length > 0 && (
-					<MoreStories title="More Posts" posts={morePosts} />
-				)}
+				<Container>
+					{heroPost && (
+						<HeroPost
+							title={heroPost.title}
+							coverImage={heroPost.coverImage}
+							date={heroPost.date}
+							author={heroPost.author}
+							slug={heroPost.slug}
+							excerpt={heroPost.excerpt}
+						/>
+					)}
+					{morePosts.length > 0 && (
+						<MoreStories title="More Posts" posts={morePosts} />
+					)}
+				</Container>
 			</Layout>
 		</>
 	);
