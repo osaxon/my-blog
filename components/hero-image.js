@@ -1,7 +1,7 @@
 import React from "react";
 import { AdvancedImage } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
-import Image from "next/image";
+import { Parallax, Background } from "react-parallax";
 
 function HeroImage() {
 	const cld = new Cloudinary({
@@ -10,12 +10,13 @@ function HeroImage() {
 		},
 	});
 
-	const myImage = cld.image("images/cornwall_beach");
+	const myImage = cld.image("images/vietnam");
+	const imgUrl = `https://res.cloudinary.com/djaiep6vj/Images/vietnam.jpg`;
 
 	return (
-		<div className="">
-			<AdvancedImage cldImg={myImage} />
-		</div>
+		<Parallax bgImage={imgUrl} strength={-100}>
+			<div class="md:h-80 h-20"></div>
+		</Parallax>
 	);
 }
 

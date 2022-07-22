@@ -1,27 +1,27 @@
 import MoreStories from "../components/more-stories";
 import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
 import Layout from "../components/layout";
 import { getAllPostsForHome, getAllTopics } from "../lib/api";
 import Head from "next/head";
 import Nav from "../components/nav";
 import Container from "../components/container";
 import HeroImage from "../components/hero-image";
+import { Parallax } from "react-parallax";
+import Header from "../components/header";
 
 export default function Index({ preview, allPosts, allTopics }) {
 	const heroPost = allPosts[0];
 	const morePosts = allPosts.slice(1);
-	console.log(allTopics);
 
 	return (
 		<>
 			<Layout preview={preview}>
 				<Head>
-					<title>Web Jenga</title>
+					<title>OG Travels</title>
 				</Head>
-				<Nav topics={allTopics} />
 
 				<Container>
+					<Header topics={allTopics} />
 					{heroPost && (
 						<HeroPost
 							title={heroPost.title}
@@ -32,6 +32,7 @@ export default function Index({ preview, allPosts, allTopics }) {
 							excerpt={heroPost.excerpt}
 						/>
 					)}
+
 					{morePosts.length > 0 && (
 						<MoreStories title="More Posts" posts={morePosts} />
 					)}

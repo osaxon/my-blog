@@ -4,7 +4,7 @@ import ErrorPage from "next/error";
 import Layout from "../../../components/layout";
 import HeroPost from "../../../components/hero-post";
 import MoreStories from "../../../components/more-stories";
-import Intro from "../../../components/intro";
+import Intro from "../../../components/title";
 import Header from "../../../components/header";
 import Container from "../../../components/container";
 
@@ -25,9 +25,11 @@ export default function Topics({ preview, allPosts }) {
 	}
 
 	return (
-		<>
-			<Layout preview={preview}>
-				<Header />
+		<Layout preview={preview}>
+			<Head>
+				<title>{topic}</title>
+			</Head>
+			<Container>
 				{router.isFallback ? (
 					<PostTitle>Loading…</PostTitle>
 				) : (
@@ -37,8 +39,8 @@ export default function Topics({ preview, allPosts }) {
 						)}
 					</>
 				)}
-			</Layout>
-		</>
+			</Container>
+		</Layout>
 	);
 }
 

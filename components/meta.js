@@ -42,7 +42,7 @@ export default function Meta() {
 
 			<meta property="og:url" content="http://www.webjenga.com/" />
 			<meta property="og:type" content="website" />
-			<meta property="og:title" content="Web Jenga" />
+			<meta property="og:title" content="OG Travels" />
 			<meta
 				property="og:description"
 				content="A blog travel created by Oli Saxon and Giovanna De Sortis"
@@ -55,7 +55,7 @@ export default function Meta() {
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta property="twitter:domain" content="webjenga.com" />
 			<meta property="twitter:url" content="http://www.webjenga.com/" />
-			<meta name="twitter:title" content="Web Jenga" />
+			<meta name="twitter:title" content="OG Travels" />
 			<meta
 				name="twitter:description"
 				content="A blog travel created by Oli Saxon and Giovanna De Sortis"
